@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+	head
+	body
+		a(href='/') Create a new post
+		br
+		h1 Welcome - Bulletin Board
+		br
+		h3 All messages:
+		each message in messages
+			li Title: #{message.title} Message: #{message.body}
+	

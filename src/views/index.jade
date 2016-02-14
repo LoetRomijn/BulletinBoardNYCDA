@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+	head
+	body
+		h1 Welcome - Bulletin Board
+		p#messages
+		p You can leave a message:
+		form(name= "message" action='/create' method='post')
+			label Title
+			input(type="text" name='title' placeholder="Title" autocomplete="off")
+			label Message
+			input(type="text" name ='body' placeholder="Your message here" autocomplete="off")
+			input(type='submit' value='Post') 
