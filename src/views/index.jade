@@ -5,13 +5,14 @@ html(lang="en")
 	body
 		h1 Welcome to this Bulletin Board
 		br 
+		a(href='/messages') All messages
 		br 
 		br 
 		p I feel really sad today, please leave me a message:
 		br
 		br
 		br 
-		form(name= "message" action='/create' method='post')
+		form(class= "form" name= "message" action='/create' method='post')
 			label Title
 			input(type="text" name='title' placeholder="Title" autocomplete="off")
 			label Message

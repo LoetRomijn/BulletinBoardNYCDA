@@ -2,7 +2,7 @@
 
 
 h1 {
-	text-align: center;
+	/*text-align: center;*/
 }
 
 h3 {
@@ -20,4 +20,9 @@ li {							/*also not working*/
 	display: inline-block;
 	border: 2px solid black;
 	text-align: center;
+}
+
+.form {							/*also not working*/
+	text-align: center;
+	margin: auto;
 }
