@@ -19,11 +19,10 @@ var connectionString = "postgres://" + process.env.POSTGRES_USER + ":@localhost/
 
 var app = express();
 
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
-app.use(bodyParser.json());
 
 app.set('views', './src/views');
 app.set('view engine', 'jade');
@@ -46,8 +45,6 @@ app.post('/create', function(request, response) {
 				throw err;
 			}
 
-			console.log(result.rows);
-
 			done();
 			pg.end();
 			response.redirect('/messages');
@@ -62,7 +59,6 @@ app.get('/messages', function(request, response) {
 			throw err;
 		}
 		client.query('select * from messages', function(err, result) {
-			console.log(result.rows);
 			messages = result.rows.reverse();
 			response.render('messages', {
 				messages: messages
