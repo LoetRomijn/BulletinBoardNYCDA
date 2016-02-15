@@ -1,0 +1,25 @@
+{
+  "name": "bulletinboard",
+  "version": "1.0.0",
+  "description": "homework NYCDA bulletin board",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoetRomijn/BulletinBoardNYCDA.git"
+  },
+  "author": "Loet Romijn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LoetRomijn/BulletinBoardNYCDA/issues"
+  },
+  "homepage": "https://github.com/LoetRomijn/BulletinBoardNYCDA#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "pg": "^4.4.4"
+  }
+}

@@ -1,0 +1,23 @@
+/*CSS style for the Bulletin Board App*/
+
+
+h1 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	font-style: italic;			/*not working, why oh why..*/
+}
+
+li {							/*also not working*/
+	text-decoration: none;
+	width: 250px;
+	display: inline-block;
+	border: 2px solid black;
+	text-align: center;
+}
