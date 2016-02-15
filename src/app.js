@@ -17,9 +17,6 @@ var pg = require('pg');
 
 var connectionString = "postgres://" + process.env.POSTGRES_USER + ":@localhost/bulletinboard";
 
-// "postgres://" + process.env.POSTGRES_USER + ":@localhost/bulletinboard" > how to pass the env. parameter 'loet'?
-
-
 var app = express();
 
 app.use(express.static(__dirname + '/views'));
@@ -38,14 +35,13 @@ app.get('/', function(request, response) {
 
 
 app.post('/create', function(request, response) {
-	queryString = 'insert into messages (title, body) values (' + '\'' + request.body.title + '\',\'' + request.body.body + '\'' + ');';
 
 	pg.connect(connectionString, function(err, client, done) {
 		if (err) {
 			done();
 			throw err;
 		}
-		client.query(queryString, function(err, result) {
+		client.query('insert into messages (title, body) values ($1, $2)', [request.body.title, request.body.body], function(err, result) {
 			if (err) {
 				throw err;
 			}
@@ -54,8 +50,8 @@ app.post('/create', function(request, response) {
 
 			done();
 			pg.end();
+			response.redirect('/messages');
 		});
-		response.redirect('/messages');
 	});
 });
 
