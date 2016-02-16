@@ -14,6 +14,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var pg = require('pg');
+var jade = require('jade');
 
 var connectionString = "postgres://" + process.env.POSTGRES_USER + ":@localhost/bulletinboard";
 

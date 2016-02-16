@@ -20,10 +20,10 @@ h3 {
 
 p {
 	text-align: center;
-	font-style: italic;			/*not working, why oh why..*/
+	font-style: italic;			
 }
 
-li {							/*also not working*/
+li {							
 	display: inline-block;
 	list-style-type: none;
 	width: 300px;
